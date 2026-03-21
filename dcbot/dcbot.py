@@ -1,11 +1,8 @@
-# This example requires the 'message_content' intent.
-
 import discord
 from discord.ext import commands
 import random
 import asyncio
-
-
+from discord import app_commands
 
 
 # intents
@@ -20,7 +17,16 @@ intents.message_content = True
 gua = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix="!",intents=intents)
 
+class MyBot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix="!", intents=intents)
 
+    
+    async def setup_hook(self):
+        await self.tree.sync()
+        print(f"斜線指令同步成功！")
+
+gua = MyBot()
 @gua.event
 async def on_ready():
     print(f'We have logged in as {gua.user}')
@@ -113,9 +119,46 @@ async def on_message(message):
     if message.content.startswith("幹"):
         await message.channel.send(f"{message.author.mention}罵髒話")
 
+##-------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+@gua.tree.command(name="hello", description="跟機器人說哈囉")
+async def hello(interaction: discord.Interaction):
+    await interaction.response.send_message(f"Hello {interaction.user.mention}!")
+
+# 運勢指令
+@gua.tree.command(name="運勢", description="看看今天的運氣")
+async def fortune(interaction: discord.Interaction):
+    fortunes = [" 吉 ", "普 ", "凶 "]
+    await interaction.response.send_message(random.choice(fortunes))
+
+# 猜數字指令
+@gua.tree.command(name="猜數字", description="開始 1~100 猜數字遊戲")
+async def guess(interaction: discord.Interaction):
+    answer = random.randint(1, 100)
+    count = 0
+
+    await interaction.response.send_message(f"{interaction.user.mention}遊戲開始！請直接在頻道輸入 **1~100** 的數字。")
+
+    def check(m):
+        return m.author == interaction.user and m.channel == interaction.channel and m.content.isdigit()
+
+    while True:
+        try:
+           
+            msg = await gua.wait_for("message", check=check, timeout=30.0)
+            guess_num = int(msg.content)
+            count += 1
             
-
-
+            if guess_num > answer:
+                await interaction.followup.send(f"{interaction.user.mention} 太大了！")
+            elif guess_num < answer:
+                await interaction.followup.send(f" {interaction.user.mention} 太小了！")
+            else:
+                await interaction.followup.send(f" {interaction.user.mention}猜對了！答案就是 **{answer}**。你共嘗試了 {count} 次！")
+                break
+        except asyncio.TimeoutError:
+            await interaction.followup.send(f" {interaction.user.mention} 猜太久了，遊戲自動結束。")
+            break
 
 gua.run("")
