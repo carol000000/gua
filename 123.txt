@@ -63,4 +63,18 @@ if num % 2 == 0:
 else:
     print("奇數")
 
+----------------------------------------
+6
+try:
+    a = int(input())
+    if 0<= a <= 100:
+        if a >= 60:
+            print("及格")
+        else:
+            print("不及格")
+    else:
+        print("請輸入0~100的數字")
+except:
+    print("請輸入數字")
+
 
