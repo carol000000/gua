@@ -76,5 +76,25 @@ try:
         print("請輸入0~100的數字")
 except:
     print("請輸入數字")
+----------------------------------------------------
+7
+try:
+    a = int(input())
+    if 0<= a <= 100:
+        if a >= 90:
+            print("A")
+        elif a >=80:
+            print("B")
+        elif a >=70:
+            print("C")
+        elif a >=60:
+            print("D")    
+        else:
+            print("F")
+    else:
+        print("請輸入0~100的數字")
+except:
+    print("請輸入數字")
+---------------------------------------------
 
 
