@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青呱Gua的網頁-我的東西</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
 
     <style>
 /* 定義全域變數方便修改 */
@@ -168,6 +168,53 @@ body {
     letter-spacing: 1px; /* 增加字距，質感更好 */
 }
 
+/* 側欄圖示通用樣式 */
+.nav-icon {
+    width: 24px;         /* 設定適合的大小 */
+    height: 24px;
+    margin-right: 12px;  /* 圖片與文字的間距 */
+    object-fit: contain; /* 確保圖片比例不變形 */
+    vertical-align: middle; 
+    transition: transform 0.2s ease;
+}
+
+/* 確保選單連結是 Flex 佈局，這樣圖示和文字才會完美對齊 */
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* 當滑鼠碰到選單時，讓圖片有一點縮放效果 */
+.sidebar ul li a:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+/* 針對切換按鈕的圖片微調 (如果需要大一點) */
+.toggle-btn .nav-icon {
+    margin-right: 0;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+/* 針對側欄圖片標籤 */
+.sidebar .nav-icon {
+    /* 核心指令：先將亮度降為 0 (變黑)，再反轉顏色 (黑變白) */
+    filter: brightness(0) invert(1);
+    
+    /* 基礎樣式微調 */
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease; /* 讓 hover 效果平滑 */
+}
+
+/* 滑鼠碰到選單時，恢復原色（例如圖片原本的藍色） */
+.sidebar ul li a:hover .nav-icon {
+    filter: none; /* 移除濾鏡 */
+}
 
     </style>
 </head>
@@ -175,18 +222,44 @@ body {
 
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
-    <nav class="sidebar">
-        <label for="menu-toggle" class="toggle-btn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-            <li><a href="/index.html"><i class="fas fa-home"></i> <span>首頁</span></a></li>
-            <li><a href="/html/item.html"><i class="fas fa-file-alt"></i> <span>我的東西</span></a></li>
-            <li><a href="/html/game.html"><i class="fas fa-gamepad"></i> <span>小遊戲</span></a></li>
-            <li><a href="/html/parpar.html"><i class="fas fa-pen"></i> <span>文章</span></a></li>
-            <li><a href="/html/link.html"><i class="fas fa-paperclip"></i> <span>連結</span></a></li>
-        </ul>
-    </nav>
+<nav class="sidebar">
+    <label for="menu-toggle" class="toggle-btn">
+        <img src="/images/menu-burger.png" alt="Toggle" class="nav-icon">
+    </label>
+    
+    <ul>
+        <li>
+            <a href="/index.html">
+                <img src="/images/home.png" alt="Home" class="nav-icon">
+                <span>首頁</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/item.html">
+                <img src="/images/document.png" alt="Items" class="nav-icon">
+                <span>我的東西</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/game.html">
+                <img src="/images/gamepad.png" alt="Games" class="nav-icon">
+                <span>小遊戲</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/parpar.html">
+                <img src="/images/pencil.png" alt="Posts" class="nav-icon">
+                <span>文章</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/link.html">
+                <img src="/images/clip.png" alt="Links" class="nav-icon">
+                <span>連結</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 
     <div class="content">
         <article class="main-card">
@@ -194,10 +267,11 @@ body {
                 <h1>我的東西</h1>
             </header>
             <div class="page-body">
-                <p>未完成。</p>
+                <p>未完成</p>
             </div>
         </article>
     </div>
+
 
 </body>
 </html>

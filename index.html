@@ -4,64 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青呱Gua的網頁-首頁</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
-    <nav class="sidebar">
-        <label for="menu-toggle" class="toggle-btn">
-            <i class="fas fa-power-off" ></i>
-        </label>
-        
-        <ul>
-            
-            <li><a href="/index.html"><i class="fas fa-home"></i> <span>首頁</span></a></li>
-            <li><a href="/html/item.html"><i class="fas fa-file-alt"></i> <span>我的東西</span></a></li>
-            <li><a href="/html/game.html"><i class="fas fa-gamepad"></i> <span>小遊戲</span></a></li>
-            <li><a href="/html/parpar.html"><i class="fas fa-pen"></i> <span>文章</span></a></li>
-            <li><a href="/html/link.html"><i class="fas fa-paperclip"></i> <span>連結</span></a></li>
-        </ul>
-    </nav>
+<nav class="sidebar">
+    <label for="menu-toggle" class="toggle-btn">
+        <img src="/images/menu-burger.png" alt="Toggle" class="nav-icon">
+    </label>
+    
+    <ul>
+        <li>
+            <a href="/index.html">
+                <img src="/images/home.png" alt="Home" class="nav-icon">
+                <span>首頁</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/item.html">
+                <img src="/images/document.png" alt="Items" class="nav-icon">
+                <span>我的東西</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/game.html">
+                <img src="/images/gamepad.png" alt="Games" class="nav-icon">
+                <span>小遊戲</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/parpar.html">
+                <img src="/images/pencil.png" alt="Posts" class="nav-icon">
+                <span>文章</span>
+            </a>
+        </li>
+        <li>
+            <a href="/html/link.html">
+                <img src="/images/clip.png" alt="Links" class="nav-icon">
+                <span>連結</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 <div class="content">
         <article class="main-card">
             <header class="banner">
                 <h1>自我介紹</h1>
             </header>
-            
-            <section class="page-body">
+            <br>
+            <section class="section-title">
                 <img src="/images/IMG_9209.png" height="200xp">
                 <h2>青呱Gua</h2>
-                <p>高中生</p>
-                <p>一隻青蛙</p>
+                <p>高中生 一隻青蛙</p>
                 <p>最喜歡嘎嘣嘎嘣的TNT</p>
                 <p>只寫的出(”hello word“);</p>
                 <br>
-               <h2 class="section-title">我的目標</h2>
-            <div class="card-grid">
-                <div class="info-card skill-hover">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>把Discord Bot做好</p>
-                </div>
-                <div class="info-card skill-hover">
-                    <i class="	fas fa-coffee"></i>
-                    <h3>Java</h3>
-                    <p>學會Java</p>
-                </div>
-                <div class="info-card skill-hover">
-                    <i class="fas fa-code"></i>
-                    <h3>APSC</h3>
-                    <p>apcs考到3 3</p>
-                </div>
-                <div class="info-card skill-hover">
-                    <i class="fas fa-server"></i>
-                    <h3>Server</h3>
-                    <p>架台Minecraft伺服器在家</p>
-                </div>
-            
+<h3 class="section-title">我的目標</h3>
+<div class="card-grid">
+    <div class="info-card skill-hover">
+        <img src="/images/robot.png" alt="Python" class="target-icon">
+        <h3>Python</h3>
+        <p>把 Discord Bot 做好</p>
+    </div>
+
+    <div class="info-card skill-hover">
+        <img src="/images/java.png" alt="Java" class="target-icon">
+        <h3>Java</h3>
+        <p>學會 Java</p>
+    </div>
+
+    <div class="info-card skill-hover">
+        <img src="/images/code-simple.png" alt="APCS" class="target-icon">
+        <h3>APCS</h3>
+        <p>APCS 考到 3 3</p>
+    </div>
+
+    <div class="info-card skill-hover">
+        <img src="/images/database.png" alt="Server" class="target-icon">
+        <h3>Server</h3>
+        <p>架台 Minecraft 伺服器在家</p>
+    </div>
+</div>
+
             </section>
         </article> 
     </div>

@@ -226,3 +226,71 @@ html {
     font-size: 1rem;
     line-height: 1.6;
 }
+
+/* 側欄圖示通用樣式 */
+.nav-icon {
+    width: 24px;         /* 設定適合的大小 */
+    height: 24px;
+    margin-right: 12px;  /* 圖片與文字的間距 */
+    object-fit: contain; /* 確保圖片比例不變形 */
+    vertical-align: middle; 
+    transition: transform 0.2s ease;
+}
+
+/* 確保選單連結是 Flex 佈局，這樣圖示和文字才會完美對齊 */
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* 當滑鼠碰到選單時，讓圖片有一點縮放效果 */
+.sidebar ul li a:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+/* 針對切換按鈕的圖片微調 (如果需要大一點) */
+.toggle-btn .nav-icon {
+    margin-right: 0;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+/* 針對側欄圖片標籤 */
+.sidebar .nav-icon {
+    /* 核心指令：先將亮度降為 0 (變黑)，再反轉顏色 (黑變白) */
+    filter: brightness(0) invert(1);
+    
+    /* 基礎樣式微調 */
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease; /* 讓 hover 效果平滑 */
+}
+
+/* 滑鼠碰到選單時，恢復原色（例如圖片原本的藍色） */
+.sidebar ul li a:hover .nav-icon {
+    filter: none; /* 移除濾鏡 */
+}
+
+/* 目標區塊圖片基礎樣式 */
+.target-icon, .nav-icon {
+    width: 60px;
+    height: 60px;
+    /* 這串代碼能將「純黑色」圖片轉為亮藍色 (#3498db) */
+    filter: invert(51%) sepia(85%) saturate(1915%) hue-rotate(178deg) brightness(95%) contrast(88%);
+    
+    transition: all 0.3s ease;
+}
+
+
+.info-card h3 {
+    margin-top: 10px;
+    color: #008cff;
+}
+
+.info-card p {
+    color: #54a1ff;
+}
