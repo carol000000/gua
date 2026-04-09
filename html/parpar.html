@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青呱Gua的網頁-文章</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 
     <style>
-       /* 定義全域變數方便修改 */
+/* 定義全域變數方便修改 */
 :root {
     --sidebar-width: 250px;
     --sidebar-collapsed-width: 70px;
@@ -26,7 +27,7 @@ body {
     /* 這裡可以換成你喜歡的背景圖 */
     background-image: linear-gradient(135deg, #ffffff 0%, #ffffffe3 100%);
     background-attachment: fixed;
-    color: rgb(31, 150, 255);/*文字顏色*/
+    color: rgb(9, 120, 255);/*文字顏色*/
     font-family: sans-serif;
     display: flex;
     min-height: 100vh;
@@ -126,7 +127,7 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);/*陰影*/
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.685);/*陰影*/
     
     /* 確保在大寬度下依然置中 */
     margin: 0 auto; 
@@ -138,17 +139,17 @@ body {
     padding: 40px 60px; /* 減少上下內距，增加左右內距 */
     text-align:center;   /* 如果寬度很大，標題靠左通常比置中好看 */
     /* 漸層色  */
-     background: linear-gradient(135deg, #3498db, #2c3e50); 
+     background: linear-gradient(135deg, #0271ba, #8bb6e1); 
 }
 .page-body {
     padding: 40px;
     line-height: 1.8;
 }
-
 /* 放大橫幅（Banner）的大標題 */
 .banner h1 {
     font-size: 3.5rem;   /* 原本可能是 2.5rem，調大至 3.5rem */
-    font-weight: bold;   /* 加粗讓它更有份量 */
+    font-weight: bold; 
+    color: #ffffff;  /* 加粗讓它更有份量 */
 }
 
 /* 放大頁面內文 */
@@ -165,6 +166,75 @@ body {
 .sidebar span {
     font-size: 1.1rem;   /* 讓選單文字更清晰 */
     letter-spacing: 1px; /* 增加字距，質感更好 */
+}
+/*-----------------------------------------------------*/
+
+/* 全域平滑捲動 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 區塊基礎設定 */
+.scroll-section {
+    padding: 80px 40px;
+    min-height: 50vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.763);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* 橫向網格佈局 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* 通用卡片基礎樣式 */
+.info-card {
+    background: rgba(255, 255, 255, 0.05); /* 玻璃感半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    /* 動畫過渡：0.4s 讓浮動看起來更絲滑 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+}
+
+/* 4. 卡片內部元素樣式 */
+.info-card i {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+    color: #3498db; /* 統一圖示顏色，也可以在 HTML 內個別設定 */
+}
+
+
+/* 3. 滑鼠碰到後的顏色與浮動效果 (Hover) */
+.skill-hover:hover {
+    background: rgba(52, 152, 219, 0.15); /* 淡淡的藍色背景 */
+    border-color: #3498db;                /* 藍色邊框 */
+    transform: translateY(-15px);         /* 向上浮起 15px */
+    box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3); /* 藍色發光陰影 */
+}
+
+/* 目標卡片：碰到變色浮起 */
+.goal-hover:hover {
+    background: rgb(255, 255, 255); /* 背景 */
+    border-color: #ffffff;                /* 邊框 */
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.89); /* 發光陰影 */
+}
+
+.info-card p {
+    color: #f7b900;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* 側欄圖示通用樣式 */
@@ -214,6 +284,25 @@ body {
 .sidebar ul li a:hover .nav-icon {
     filter: none; /* 移除濾鏡 */
 }
+
+/* 目標區塊圖片基礎樣式 */
+.target-icon, .nav-icon {
+    width: 60px;
+    height: 60px;
+    /* 這串代碼能將「純黑色」圖片轉為亮藍色 (#3498db) */
+    filter: invert(51%) sepia(85%) saturate(1915%) hue-rotate(178deg) brightness(95%) contrast(88%);
+    
+    transition: all 0.3s ease;
+}
+
+
+.info-card h3 {
+    margin-top: 10px;
+    color: #008cff;
+    }
+
+
+
 
     </style>
 </head>
@@ -268,8 +357,42 @@ body {
             <div class="page-body">
                 <p>未完成</p>
             </div>
-        </article>
+
+
+
+<div class="card-grid">
+
+    <a href="https://hackmd.io/@jCqetB0bR9a1OdMCJGrXig/rJv8YESnWe" target="_blank">
+    <div class="info-card skill-hover">
+        <img src="" class="target-icon">
+        <h3>測試</h3>
+        <p>一個測試 點選了解更多</p>
     </div>
+    </a>
+
+    <div class="info-card skill-hover">
+        <img src="" class="target-icon">
+        <h3>???</h3>
+        <p>???</p>
+    </div>
+
+    <div class="info-card skill-hover">
+        <img src="" class="target-icon">
+        <h3>???</h3>
+        <p>???</p>
+    </div>
+
+    <div class="info-card skill-hover">
+        <img src="" class="target-icon">
+        <h3>???</h3>
+        <p>???</p>
+    </div>
+</div>
+
+        </article>
+
+
+
 
 </body>
 </html>
