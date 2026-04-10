@@ -173,19 +173,21 @@ html {
     font-size: 1.5rem;
     
 }
+.section-title h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #136aff;
+    
+}
 .section-title p {
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.25rem;
+
     
 }
-.section-title h3 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1rem;
-    color: #ffa013;
-    
-}
+
 
 /* 橫向網格佈局 */
 .card-grid {
@@ -306,13 +308,3 @@ html {
     color: #008cff;
 }
 
-.abc p {
-    color: #ff9500;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-.abc h3 {
-    color: #006bf7;
-    font-size: 2rem;
-    line-height: 1;
-}
