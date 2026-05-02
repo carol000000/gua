@@ -179,6 +179,7 @@ html {
 .section-title h2 {
     text-align: center;
     font-size: 2rem;
+    color: #f76b00;
     
 }
 .section-title p {
@@ -361,41 +362,44 @@ html {
 
 /* 2. 文字清單調整 */
 .intro-container2 {
-    flex: 1;                /* 佔據可用空間 */
-    max-width: 800px;       /* 限制文字寬度避免太散 */
+    flex: 1;
+    max-width: 900px; /* 稍微放寬以利於長文字顯示 */
+    margin: 0 auto;   /* 置中容器 */
 }
 
 .intro-container2 ul {
-    list-style: none;       /* 移除圓點 */
-    padding-left: 150px;
+    list-style: none;
+    padding: 0;      /* 移除原本過大的 padding-left */
 }
 
 .intro-container2 ul li {
-    display: flex;          /* 讓「標題」與「<p>內容」橫向排列 */
-    align-items: baseline;  /* 對齊文字基準線 */
-    margin-bottom: 15px;    /* 每行間距 */
+    display: flex;            /* 開啟彈性佈局 */
+    align-items: flex-start;  /* 讓標題與長內容的「第一行」對齊 */
+    margin-bottom: 20px;
     font-size: 1.5rem;
-    padding-left: 60px; ;
+    padding-left: 100px;      /* 根據你的設計保留適當位移 */
 }
 
-.intro-container2 ul li strong {
-    min-width: 100px;       /* 讓標題寬度一致，內容才會對齊 */
-    color: #006bf7;         /* 標題顏色 */
+/* 新增：專門控制左側標題的樣式 */
+.intro-container2 ul li .list-label {
+    flex-shrink: 0;           /* 關鍵：防止標題被擠壓 */
+    width: 160px;             /* 固定寬度：確保所有冒號後方的內容垂直對齊 */
+    color: #006bf7;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .intro-container2 ul li p {
     margin: 0;
     color: #000000;
+    flex: 1;                  /* 關鍵：佔據剩餘所有空間 */
+    text-align: left;         /* 確保內容靠左 */
+    line-height: 1.6;
+    word-break: break-all;    /* 防止超長字串撐破版面 */
 }
-.section-title1 h2 {
-    text-align: center;
-    color: #ff5e07;
-    font-size: 2rem;
-    padding-right:400px ;
-}
-.section-title2 h2 {
-    text-align: center;
-    color: #ff5e07;
-    font-size: 2rem;
-    padding-right:400px ;
+
+/* 針對「未來展望」標題的微調 */
+.intro-container2 h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
 }

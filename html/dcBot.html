@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青呱Gua的網頁-Discord機器人</title>
 
-<link rel="icon" href="/images/mark.png" type="image/x-icon">
+    <link rel="icon" href="/images/mark.png" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/dcBot.css">
 </head>
@@ -15,60 +15,96 @@
 
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
-<nav class="sidebar">
-    <label for="menu-toggle" class="toggle-btn">
-        <img src="/images/menu-burger.png" alt="Toggle" class="nav-icon">
-    </label>
+    <nav class="sidebar">
+        <label for="menu-toggle" class="toggle-btn">
+            <img src="/images/menu-burger.png" alt="Toggle" class="nav-icon">
+        </label>
+        <ul>
+            <li><a href="/index.html"><img src="/images/home.png" class="nav-icon"><span>首頁</span></a></li>
+            <li><a href="/html/item.html"><img src="/images/document.png" class="nav-icon"><span>我的東西</span></a></li>
+            <li><a href="/html/game.html"><img src="/images/gamepad.png" class="nav-icon"><span>小遊戲</span></a></li>
+            <li><a href="/html/parpar.html"><img src="/images/pencil.png" class="nav-icon"><span>文章</span></a></li>
+            <li><a href="/html/link.html"><img src="/images/clip.png" class="nav-icon"><span>連結</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <article class="main-card">
+            <header class="banner">
+                <h1>Discord 機器人</h1>
+
+            </header>
+            <section class="section-title">
+                <div class="section-title2">
+                    <h2>簡介</h2>
+                </div>
+                <div class="intro-flex-wrapper">
+                    <div class="intro-container">
+                        <ul>
+                            <li><b>機器人名稱:</b><p>青呱的實驗品</p>
+                            </li>
+                            <li><b>語言:</b><p>Python</p>
+                            </li>
+                            <li><b>框架:</b><p>discord.py</p>
+                            </li>
+                            <li>
+                            <b>Discord:</b><p><a href="https://discord.gg/wXbXHhfvbd" target="_blank">前往</a></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="intro-image">
+                        <img src="/images/dcbotimg.png" alt="機器人圖像">
+                    </div>
+
+
+                </div>
+                <div class="section-title2">
+                    <h2>開發動機</h2>
+                </div>
+                <p>想嘗試製作一些簡單的小遊戲順便做自主學習的計畫</p>
+                <br>
+                <div class="section-title2">
+<div class="section-title2">
+    <h2>功能</h2>
+</div>
+<div class="intro-container2">
     <ul>
-        <li><a href="/index.html"><img src="/images/home.png" class="nav-icon"><span>首頁</span></a></li>
-        <li><a href="/html/item.html"><img src="/images/document.png" class="nav-icon"><span>我的東西</span></a></li>
-        <li><a href="/html/game.html"><img src="/images/gamepad.png" class="nav-icon"><span>小遊戲</span></a></li>
-        <li><a href="/html/parpar.html"><img src="/images/pencil.png" class="nav-icon"><span>文章</span></a></li>
-        <li><a href="/html/link.html"><img src="/images/clip.png" class="nav-icon"><span>連結</span></a></li>
+        <li>
+            <span class="list-label">回覆 :</span>
+            <p>ping 早午晚安 運勢 呱</p>
+        </li>
+        <li>
+            <span class="list-label">遊戲 :</span>
+            <p>猜數字 猜拳</p>
+        </li>
+        <li>
+            <span class="list-label">管理 :</span>
+            <p>當被盜帳的人亂發訊息時踢出刪除訊息</p>
+        </li>
     </ul>
-</nav>
+</div>
+<br>
 
-<div class="content">
-    <article class="main-card">
-        <header class="banner">
-            <h1>Discord 機器人</h1>
-            <p class="subtitle">介紹和心得</p>
-        </header>
-<section class="section-title">
-    <h2>簡介</h2>
-    <div class="intro-flex-wrapper"> 
-        <div class="intro-container">
-            <ul>
-                <li>機器人名稱:<p>青呱的實驗品</p></li>
-                <li>語言:<p>Python</p></li>
-                <li>框架:<p>discord.py</p></li>
-            </ul>
-        </div>
-
-        <div class="intro-image">
-            <img src="/images/dcbotimg.png" alt="機器人圖像">
-        </div>
-
-
-    </div>
-    <div class="section-title1">
-            <h2>開發動機</h2>
-            </div>
-        <p>123</p>
-        <br>
-        <div class="section-title2">
-        <h2>功能</h2>
-        </div>
-        <div class="intro-container2">
-            <ul>
-                <li>回覆:<p>ping 早午晚安 運勢 呱</p></li>
-                <li>遊戲:<p>猜數字 猜拳</p></li>
-                <li>管理:<p>踢出刪除訊息 被盜帳的人亂發</p></li>
-            </ul>
-        </div>
-        <br>
-        <p>123</p>
-        <h2>遇到的問題</h2>
+<!-- 未來展望區塊 -->
+<div class="intro-container2">
+    <div class="section-title2">
         <h2>未來展望</h2>
-</section>
+    </div>
+    <ul>
+        <li>
+            <span class="list-label">更多功能:</span>
+            <p>製作更多小遊戲與管理功能</p>
+        </li>
+        <li>
+            <span class="list-label">自訂設定:</span>
+            <p>提供使用者自訂功能開關，滿足不同的管理需求</p>
+        </li>
+        <li>
+            <span class="list-label">網頁面板:</span>
+            <p>讓設定過程更加方便</p>
+        </li>
+    </ul>
+</div>
 
+    </section>
