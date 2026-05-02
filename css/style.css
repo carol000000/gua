@@ -13,11 +13,10 @@
 }
 
 body {
-    background: #2b61e7; /* 深藍底色 */
-    /* 這裡可以換成你喜歡的背景圖 */
-    background-image: linear-gradient(135deg, #ffffff 0%, #ffffffe3 100%);
+    background: #e0f2ff; 
+    background-image: linear-gradient(135deg, #4a749b 0%, #06173d 100%);
     background-attachment: fixed;
-    color: rgb(9, 120, 255);/*文字顏色*/
+    color: #0978ff; /* 保留你原本的藍色文字 */
     font-family: sans-serif;
     display: flex;
     min-height: 100vh;
@@ -113,7 +112,7 @@ body {
     width: 95%;          /* 在小螢幕時佔據 95% 的寬度 */
     max-width: 1200px;   /* 將最大寬度從 800px 調大至 1200px */
     
-    background: var(--glass-white);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
@@ -129,7 +128,7 @@ body {
     padding: 40px 60px; /* 減少上下內距，增加左右內距 */
     text-align:center;   /* 如果寬度很大，標題靠左通常比置中好看 */
     /* 漸層色  */
-     background: linear-gradient(135deg, #0271ba, #8bb6e1); 
+     background: linear-gradient(135deg, #0099ff, #90e9ff); 
 }
 .page-body {
     padding: 40px;
@@ -174,7 +173,8 @@ html {
 .section-title {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #2368fd;
 }
 
 /* 橫向網格佈局 */
@@ -182,6 +182,7 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
+    
 }
 
 /* 通用卡片基礎樣式 */
@@ -207,8 +208,8 @@ html {
 
 /* 3. 滑鼠碰到後的顏色與浮動效果 (Hover) */
 .skill-hover:hover {
-    background: rgba(52, 152, 219, 0.15); /* 淡淡的藍色背景 */
-    border-color: #3498db;                /* 藍色邊框 */
+    background: rgba(193, 230, 255, 0.537); /* 淡淡的藍色背景 */
+    border-color: #049bff;                /* 藍色邊框 */
     transform: translateY(-15px);         /* 向上浮起 15px */
     box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3); /* 藍色發光陰影 */
 }
@@ -222,7 +223,7 @@ html {
 }
 
 .info-card p {
-    color: #f7b900;
+    color: #ffb432;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -291,3 +292,42 @@ html {
     color: #008cff;
 }
 
+/* 1. 先把原本這段刪除或註釋掉，它會讓圖片飛到右邊螢幕外 */
+/* .intro-image img {
+    padding-left: 600px; 
+} */
+
+/* 2. 確保使用這段 Flexbox 設定 */
+.intro-container2 {
+    display: flex;          /* 水平排列 */
+    align-items: center;    /* 垂直居中 */
+    justify-content: space-between; /* 文字靠左，圖片靠右 */
+    padding: 40px;          /* 給整個區塊一點內距 */
+    gap: 40px;              /* 文字與圖片中間的距離 */
+    
+}
+
+.text-content {
+    flex: 1;                /* 讓文字自動佔滿左側剩餘空間 */
+}
+
+.intro-container2 img {
+    width: 300px;           /* 設定圖片寬度 */
+    height: 300px;          /* 設定圖片高度 */
+    object-fit: cover;      /* 確保圖片裁切不變形 */
+    border-radius: 20%;     /* 如果你想讓頭像變成圓形的 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* 加點陰影比較好看 */
+}
+
+
+.intro-container2 h2 {
+    font-size: 2.5rem;
+    color: #1271ff;
+    margin-bottom: 15px;
+}
+
+.intro-container2 p {
+    font-size: 25px;
+    color: #ff6600;
+    
+}
